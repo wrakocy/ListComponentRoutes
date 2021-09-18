@@ -2,7 +2,7 @@
 
 A middleware nuget package for listing all routeable Razor components in an ASP.NET Core app. 
 
-(Big shout to Steve Smith (aka [Ardalis](https://github.com/ardalis)) for his work on [AspNetCoreStartupServices](https://github.com/ardalis/AspNetCoreStartupServices), from which I borrowed heavily to piece this together).
+(Big shout out to Steve Smith (aka [Ardalis](https://github.com/ardalis)) for his work on [AspNetCoreStartupServices](https://github.com/ardalis/AspNetCoreStartupServices), from which I borrowed heavily to piece this together).
 
 # Getting Started
 
