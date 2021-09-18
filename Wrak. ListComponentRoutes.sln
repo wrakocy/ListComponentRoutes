@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FA8459EC-8706-452D-9EEE-EF374CD9542A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A5BD7064-8A17-4D26-B37C-65678E932248}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2762D462-7F1B-4ADC-B76F-F93600F476E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".azure", ".azure", "{799D5313-E8D4-4810-820A-587721A0BBF1}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{B0705BB4-6FDA-431B-A8E7-76FECE36A941}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wrak.ListComponentRoutes", "Wrak.ListComponentRoutes\Wrak.ListComponentRoutes.csproj", "{A87A7481-3D8D-4725-84F5-175E56EBD5A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wrak.ListComponentRoutes.Tests", "Wrak.ListComponentRoutes.Tests\Wrak.ListComponentRoutes.Tests.csproj", "{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A87A7481-3D8D-4725-84F5-175E56EBD5A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87A7481-3D8D-4725-84F5-175E56EBD5A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87A7481-3D8D-4725-84F5-175E56EBD5A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87A7481-3D8D-4725-84F5-175E56EBD5A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A87A7481-3D8D-4725-84F5-175E56EBD5A9} = {FA8459EC-8706-452D-9EEE-EF374CD9542A}
+		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC} = {A5BD7064-8A17-4D26-B37C-65678E932248}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CC7C51F-6030-4AE5-90EE-0EC20E50D9A3}
+	EndGlobalSection
+EndGlobal

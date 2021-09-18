@@ -1,0 +1,75 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+name: $(Year:yy).$(Month).$(DayOfMonth).$(BuildID)
+
+trigger:
+- main 
+- feature/*
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  build.name: 'Wrak.ListComponentRoutes'
+  build.configuration: 'Release'
+  build.project: $(build.name).sln
+  projects: '**/*.csproj'
+  dotNetCoreSDK: 5.0.x
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .Net 5 SDK'
+  inputs:
+    packageType: sdk
+    version: $(dotNetCoreSDK)
+
+- task: DotNetCoreCLI@2 
+  displayName: 'DotNet Restore From Feeds' 
+  inputs: 
+    command: restore 
+    projects: '$(projects)' 
+    feedsToUse: 'select'
+    vstsFeed: '4cf97f8d-8468-4ed5-9ac6-c072749ccb3e/3dc1865a-b4ad-42c0-b2cc-2672341b6bee'     
+    versioningScheme: byBuildNumber
+
+- task: DotNetCoreCLI@2
+  displayName: 'Dotnet Build $(build.configuration)'
+  inputs:
+    command: 'build'
+    projects: $(build.project)
+    arguments: '--configuration $(build.configuration) /p:SourceRevisionId=$(Build.SourceVersion)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run Unit Tests'
+  inputs:
+    command: 'test'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Dotnet Publish'
+  inputs:
+    command: 'publish'
+    projects: $(build.project)
+    publishWebProjects: false
+    zipAfterPublish: false    
+    modifyOutputPath: false
+    arguments: '--configuration $(build.configuration) /p:PublishDir=artifacts'
+
+- task: OctopusPack@4
+  displayName: 'Package'
+  inputs:
+    PackageId: Wrak.ListComponentRoutes
+    PackageFormat: 'NuPkg'
+    PackageVersion: '$(build.buildnumber)'
+    SourcePath: CertiIS.Funding.Web/artifacts
+    OutputPath: $(build.artifactstagingdirectory)
+
+- task: NuGetCommand@2
+  displayName: 'Publish Packages to Azure DevOps feed'
+  inputs:
+    command: 'push'
+    packagesToPush: '$(build.artifactstagingdirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '4cf97f8d-8468-4ed5-9ac6-c072749ccb3e/3dc1865a-b4ad-42c0-b2cc-2672341b6bee'

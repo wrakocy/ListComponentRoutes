@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>0.5.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <Description>A middleware nuget package for listing all routeable Razor components in an ASP.NET Core app.</Description>
+    <Authors>William Rakocy</Authors>
+    <PackageId>Wrak.ListComponentRoutes</PackageId>
+    <Product>Wrak.ListComponentRoutes</Product>
+    <RootNamespace>Wrak.ListComponentRoutes</RootNamespace>
+    <AssemblyName>Wrak.ListComponentRoutes</AssemblyName>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.10" />
+  </ItemGroup>
+
+</Project>
