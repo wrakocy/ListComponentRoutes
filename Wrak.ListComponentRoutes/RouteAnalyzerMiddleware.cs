@@ -20,7 +20,7 @@ namespace Wrak.ListComponentRoutes
         {
             if (httpContext.Request.Path == _config.Path)
             {
-                var routeDescriptors = RouteAnalyzer.Analyze();
+                var routeDescriptors = RouteAnalyzer.Analyze(_config.Assemblies);
                 var sb = new StringBuilder();
 
                 sb.Append("<h1>Component Routes</h1>");

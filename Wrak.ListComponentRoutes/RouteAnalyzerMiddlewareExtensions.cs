@@ -6,7 +6,7 @@ namespace Wrak.ListComponentRoutes
 {
     public static class RouteAnalyzerMiddlewareExtensions
     {
-        public static IServiceCollection AddListComponentRoutes(this IServiceCollection services, string listRoutesPath = "/routes")
+        public static IServiceCollection AddListComponentRoutes(this IServiceCollection services,  string listRoutesPath = "/routes")
         {
             if (string.IsNullOrEmpty(listRoutesPath)) throw new NullReferenceException($"{listRoutesPath} routes path cannot be null.");
             return services.AddListComponentRoutes(x => x.Path = listRoutesPath);

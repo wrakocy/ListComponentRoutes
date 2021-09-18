@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wrak.ListComponentRoutes", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wrak.ListComponentRoutes.Tests", "Wrak.ListComponentRoutes.Tests\Wrak.ListComponentRoutes.Tests.csproj", "{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wrak.ListComponentRoutes.Tests.WebApp", "Wrak.ListComponentRoutes.Tests.WebApp\Wrak.ListComponentRoutes.Tests.WebApp.csproj", "{F5E14ADE-4562-46B8-808B-3AAA169BD738}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E14ADE-4562-46B8-808B-3AAA169BD738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E14ADE-4562-46B8-808B-3AAA169BD738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E14ADE-4562-46B8-808B-3AAA169BD738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E14ADE-4562-46B8-808B-3AAA169BD738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A87A7481-3D8D-4725-84F5-175E56EBD5A9} = {FA8459EC-8706-452D-9EEE-EF374CD9542A}
 		{339758EB-AC3F-48D7-B0D5-566ADE21CCCC} = {A5BD7064-8A17-4D26-B37C-65678E932248}
+		{F5E14ADE-4562-46B8-808B-3AAA169BD738} = {A5BD7064-8A17-4D26-B37C-65678E932248}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CC7C51F-6030-4AE5-90EE-0EC20E50D9A3}

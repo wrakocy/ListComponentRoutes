@@ -8,13 +8,12 @@ namespace Wrak.ListComponentRoutes
 {
     public class RouteAnalyzer
     {
-        public static List<RouteDescriptor> Analyze()
+        public static List<RouteDescriptor> Analyze(Assembly[] assemblies)
         {
-            var assembly = Assembly.GetExecutingAssembly();
-
-            var components = assembly
+            var components = assemblies
+                .SelectMany(assembly => assembly
                 .ExportedTypes 
-                .Where(t => t.IsSubclassOf(typeof(ComponentBase)));
+                .Where(t => t.IsSubclassOf(typeof(ComponentBase))));
 
             var routes = components
                 .Select(component => GetRouteDescriptorFromComponent(component))
