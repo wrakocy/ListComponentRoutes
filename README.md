@@ -1,10 +1,16 @@
 # ASP.NET Core ListComponentRoutes Middleware Package
 
-A middleware nuget package for listing all routeable components in an ASP.NET Core app.
+A middleware nuget package for listing all routeable Razor components in an ASP.NET Core app.
 
 # Getting Started
 
-1. Install the nuget package.
+### Install NuGet package
+- [NuGet Gallery | AspNetCore.RouteAnalyzer](https://www.nuget.org/packages/Wrak.ListComponentRoutes/)
+
+```
+PM> Install-Package Wrak.ListComponentRoutes
+```
+
 1. Add the following at **the bottom of** Startup's `ConfigureServices` method:
 
 ```
