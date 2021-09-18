@@ -20,10 +20,10 @@ using Wrak.ListComponentRoutes;
 3. Add the following at **the bottom of** Startup's `ConfigureServices` method:
 
 ```
-services.AddListComponentRoutes(x =>
+services.AddListComponentRoutes(options =>
 {                
-    x.Path = "/my-custom-route"; // Optional - default path is '/routes'
-    x.Assemblies = new[] { typeof(Startup).Assembly };
+    options.Path = "/my-custom-route"; // Optional - default path is '/routes'
+    options.Assemblies = new[] { typeof(Startup).Assembly };
 });
 ```
 4. Add the following to Startup's Configure method (in an if block so it only runs in Development)
