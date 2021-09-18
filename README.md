@@ -12,10 +12,9 @@ PM> Install-Package Wrak.ListComponentRoutes
 2. Add the following at **the bottom of** Startup's `ConfigureServices` method:
 
 ```
-// optional - default path to list services is /routes
-services.AddListComponentRoutes('/my-list-route');
+services.AddListComponentRoutes('/my-list-route'); // optional - default path to list is '/routes'
 ```
-3. Add the following to your Configure method (in an if block so it only runs in development)
+3. Add the following to Startup's Configure method (in an if block so it only runs in Development)
 ```
 if (env.IsDevelopment())
 {
