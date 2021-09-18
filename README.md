@@ -32,7 +32,7 @@ if (env.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 ```
-If it's working you should see output like this listing all of your routeable Razor components:
+If it's working you should see output like this listing all routeable Razor components in the configured assembly or assemblies:
 
 ![screenshot](./screenshot.png)
 
