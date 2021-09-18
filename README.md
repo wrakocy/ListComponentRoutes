@@ -8,17 +8,24 @@ A middleware nuget package for listing all routeable Razor components in an ASP.
 
 ```
 PM> Install-Package Wrak.ListComponentRoutes
+
 ```
 2. Add the following to Startup's using statements:
 
 ```
 using Wrak.ListComponentRoutes;
+
 ```
 
 3. Add the following at **the bottom of** Startup's `ConfigureServices` method:
 
 ```
-services.AddListComponentRoutes('/my-list-route'); // optional - default path to list is '/routes'
+services.AddListComponentRoutes(x =>
+{                
+    x.Path = "/my-custom-route"; // Optional - default path is '/routes'
+    x.Assemblies = new[] { typeof(Startup).Assembly };
+});
+
 ```
 4. Add the following to Startup's Configure method (in an if block so it only runs in Development)
 ```
