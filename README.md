@@ -1,4 +1,4 @@
-# ASP.NET Core ListComponentRoutes Middleware Package
+# ListComponentRoutes Middleware Package
 
 A middleware nuget package for listing all routeable Razor components in an ASP.NET Core app.
 
