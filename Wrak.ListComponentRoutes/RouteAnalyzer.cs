@@ -13,7 +13,7 @@ namespace Wrak.ListComponentRoutes
             var assembly = Assembly.GetExecutingAssembly();
 
             var components = assembly
-                .ExportedTypes
+                .ExportedTypes 
                 .Where(t => t.IsSubclassOf(typeof(ComponentBase)));
 
             var routes = components
