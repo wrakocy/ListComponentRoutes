@@ -3,75 +3,28 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-name: $(Year:yy).$(Month).$(DayOfMonth).$(BuildID)
-
 trigger:
-- main 
-- feature/*
+- main
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'Ubuntu-16.04'
 
 variables:
-  build.name: 'Wrak.ListComponentRoutes'
-  build.configuration: 'Release'
-  build.project: $(build.name).sln
-  projects: '**/*.csproj'
-  dotNetCoreSDK: 5.0.x
+  buildConfiguration: 'Release'
 
 steps:
-- task: UseDotNet@2
-  displayName: 'Use .Net 5 SDK'
-  inputs:
-    packageType: sdk
-    version: $(dotNetCoreSDK)
-
-- task: DotNetCoreCLI@2 
-  displayName: 'DotNet Restore From Feeds' 
-  inputs: 
-    command: restore 
-    projects: '$(projects)' 
-    feedsToUse: 'select'    
-    versioningScheme: byBuildNumber
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Dotnet Build $(build.configuration)'
+  displayName: Build Tests
   inputs:
-    command: 'build'
-    projects: $(build.project)
-    arguments: '--configuration $(build.configuration) /p:SourceRevisionId=$(Build.SourceVersion)'
+    projects: '**/Wrak.ListComponentRoutes.Tests.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Run Unit Tests'
+  displayName: Run Tests
   inputs:
-    command: 'test'
-
-- task: DotNetCoreCLI@2
-  displayName: 'Dotnet Publish'
-  inputs:
-    command: 'publish'
-    projects: $(build.project)
-    publishWebProjects: false
-    zipAfterPublish: false    
-    modifyOutputPath: false
-    arguments: '--configuration $(build.configuration) /p:PublishDir=artifacts'
-
-- task: NuGetCommand@2
-  displayName: 'Package'
-  inputs:
-    command: pack
-    packagesToPack: '**/Wrak.ListComponentRoutes.csproj'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
-
-- task: NuGetAuthenticate@0
-  displayName: 'Authenticate with NuGet'
-  inputs:
-    nuGetServiceConnections: 'wrakocy.nuget'
-
-- task: NuGetCommand@2
-  displayName: 'Push Package to NuGet Feed'
-  inputs:
-    command: push
-    nuGetFeedType: external
-    versioningScheme: byBuildNumber
-    versionEnvVar: $(build.buildnumber)
+    command: test
+    projects: '**/Wrak.ListComponentRoutes.Tests.csproj'
+    arguments: '--configuration $(BuildConfiguration) --no-build --no-restore'
