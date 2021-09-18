@@ -57,19 +57,22 @@ steps:
     modifyOutputPath: false
     arguments: '--configuration $(build.configuration) /p:PublishDir=artifacts'
 
-- task: OctopusPack@4
+- task: NuGetCommand@2
   displayName: 'Package'
   inputs:
-    PackageId: Wrak.ListComponentRoutes
-    PackageFormat: 'NuPkg'
-    PackageVersion: '$(build.buildnumber)'
-    SourcePath: CertiIS.Funding.Web/artifacts
-    OutputPath: $(build.artifactstagingdirectory)
+    command: pack
+    packagesToPack: '**/Wrak.ListComponentRoutes.csproj'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+
+- task: NuGetAuthenticate@0
+  displayName: 'Authenticate with NuGet'
+  inputs:
+    nuGetServiceConnections: 'NuGet'
 
 - task: NuGetCommand@2
-  displayName: 'Publish Packages to Azure DevOps feed'
+  displayName: 'Push Package to NuGet Feed'
   inputs:
-    command: 'push'
-    packagesToPush: '$(build.artifactstagingdirectory)/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: '4cf97f8d-8468-4ed5-9ac6-c072749ccb3e/3dc1865a-b4ad-42c0-b2cc-2672341b6bee'
+    command: push
+    nuGetFeedType: external
+    versioningScheme: byBuildNumber
+    versionEnvVar: $(build.buildnumber)
