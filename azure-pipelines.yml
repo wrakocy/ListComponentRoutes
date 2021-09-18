@@ -31,8 +31,7 @@ steps:
   inputs: 
     command: restore 
     projects: '$(projects)' 
-    feedsToUse: 'select'
-    vstsFeed: '4cf97f8d-8468-4ed5-9ac6-c072749ccb3e/3dc1865a-b4ad-42c0-b2cc-2672341b6bee'     
+    feedsToUse: 'select'    
     versioningScheme: byBuildNumber
 
 - task: DotNetCoreCLI@2
@@ -67,7 +66,7 @@ steps:
 - task: NuGetAuthenticate@0
   displayName: 'Authenticate with NuGet'
   inputs:
-    nuGetServiceConnections: 'NuGet'
+    nuGetServiceConnections: 'wrakocy.nuget'
 
 - task: NuGetCommand@2
   displayName: 'Push Package to NuGet Feed'
