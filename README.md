@@ -22,7 +22,7 @@ using Wrak.ListComponentRoutes;
 ```
 services.AddListComponentRoutes(options =>
 {                
-    options.Path = "/my-custom-route"; // Optional - default path is '/routes'
+    options.Path = "/my-custom-path"; // Optional - default path is '/routes'
     options.Assemblies = new[] { typeof(Startup).Assembly };
 });
 ```
