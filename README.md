@@ -5,7 +5,6 @@ A middleware nuget package for listing all routeable Razor components in an ASP.
 # Getting Started
 
 1. Install NuGet package
-- [NuGet Gallery | Wrak.ListComponentRoutes](https://www.nuget.org/packages/Wrak.ListComponentRoutes/)
 
 ```
 PM> Install-Package Wrak.ListComponentRoutes
