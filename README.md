@@ -26,7 +26,7 @@ services.AddListComponentRoutes(options =>
     options.Assemblies = new[] { typeof(Startup).Assembly };
 });
 ```
-4. Add the following to Startup's Configure method (in an if block so it only runs in Development)
+4. Add the following to Startup's `Configure` method (in an if block so it only runs in Development)
 ```
 if (env.IsDevelopment())
 {
