@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Wrak.ListComponentRoutes
 {
-    public class RouteAnalyzer
+    internal class RouteAnalyzer
     {
         public static List<RouteDescriptor> Analyze(Assembly[] assemblies)
         {

@@ -1,6 +1,6 @@
 ﻿namespace Wrak.ListComponentRoutes
 {
-    public class RouteDescriptor
+    internal class RouteDescriptor
     {
         public string ComponentNamespace { get; set; }
         public string ComponentName { get; set; }

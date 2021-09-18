@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Wrak.ListComponentRoutes
 {
-    public class RouteAnalyzerMiddleware
+    internal class RouteAnalyzerMiddleware
     {
         private readonly RouteAnalyzerServiceConfig _config;
         private readonly RequestDelegate _next;
