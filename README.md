@@ -24,5 +24,5 @@ if (env.IsDevelopment())
 ```
 If it's working you should see output like this listing all of your routeable Razor components:
 
-![image](https://user-images.githubusercontent.com/782127/52003616-0e497b80-2493-11e9-856c-1d4ef9207be0.png)
+![screenshot](./docs/screenshot.png)
 
