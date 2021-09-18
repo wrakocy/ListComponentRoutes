@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>0.6.0</Version>
+    <Version>0.6.1</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <Description>A middleware nuget package for listing all routeable Razor components in an ASP.NET Core app.</Description>
@@ -12,6 +12,9 @@
     <RootNamespace>Wrak.ListComponentRoutes</RootNamespace>
     <AssemblyName>Wrak.ListComponentRoutes</AssemblyName>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/wrakocy/ListComponentRoutes</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/wrakocy/ListComponentRoutes</RepositoryUrl>
+    <PackageTags>aspnetcore razor blazor components routes middleware</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
