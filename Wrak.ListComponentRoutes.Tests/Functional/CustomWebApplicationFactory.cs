@@ -13,8 +13,6 @@ namespace Wrak.ListComponentRoutes.Tests.Functional
         {
             builder.ConfigureServices(services =>
             {
-                var serviceProvider = new ServiceCollection().BuildServiceProvider();
-
                 services.Configure<RouteAnalyzerServiceConfig>(config =>
                 {
                     config.Assemblies = new[] { typeof(Startup).Assembly };
@@ -22,11 +20,6 @@ namespace Wrak.ListComponentRoutes.Tests.Functional
                     if(!string.IsNullOrEmpty(Path))
                         config.Path = Path;
                 });
-            });
-
-            builder.Configure(app =>
-            {
-                app.UseListComponentRoutes();
             });
         }
     }
