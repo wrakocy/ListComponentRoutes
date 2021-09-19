@@ -21,12 +21,14 @@ namespace Wrak.ListComponentRoutes.Tests.WebApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddListComponentRoutes(x => x.Assemblies = new[] { typeof(Startup).Assembly });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
+                app.UseListComponentRoutes();
                 app.UseDeveloperExceptionPage();
             }
             else
