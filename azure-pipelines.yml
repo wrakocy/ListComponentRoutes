@@ -17,12 +17,6 @@ steps:
   displayName: 'Build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: Build Tests
-  inputs:
-    projects: '**/Wrak.ListComponentRoutes.Tests.csproj'
-    arguments: '--configuration $(BuildConfiguration)'
-
-- task: DotNetCoreCLI@2
   displayName: Run Tests
   inputs:
     command: test
