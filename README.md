@@ -1,4 +1,4 @@
-[![NuGet](https://img.shields.io/nuget/v/Wrak.ListComponentRoutes.svg)](https://www.nuget.org/packages/Wrak.ListComponentRoutes) 
+[![NuGet](https://img.shields.io/nuget/v/Wrak.ListComponentRoutes.svg)](https://www.nuget.org/packages/Wrak.ListComponentRoutes) [![NuGet](https://img.shields.io/nuget/dt/Wrak.ListComponentRoutes.svg)](https://www.nuget.org/packages/Wrak.ListComponentRoutes)
 [![Build Status](https://wrakocy.visualstudio.com/ListComponentRoutes/_apis/build/status/wrakocy.ListComponentRoutes?branchName=main)](https://wrakocy.visualstudio.com/ListComponentRoutes/_build/latest?definitionId=3&branchName=main)
 
 # ListComponentRoutes Middleware Package
