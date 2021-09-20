@@ -10,6 +10,8 @@ namespace Wrak.ListComponentRoutes
     {
         public static List<RouteDescriptor> Analyze(Assembly[] assemblies)
         {
+            if (assemblies == null) throw new ArgumentNullException(nameof(assemblies));
+
             var components = assemblies
                 .SelectMany(assembly => assembly
                 .ExportedTypes 

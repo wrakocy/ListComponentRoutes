@@ -8,7 +8,7 @@ namespace Wrak.ListComponentRoutes
     {
         public static IServiceCollection AddListComponentRoutes(this IServiceCollection services, Action<RouteAnalyzerServiceConfig> configureOptions)
         {
-            if (configureOptions == null) throw new NullReferenceException($"{nameof(configureOptions)} cannot be null.");
+            if (configureOptions == null) throw new ArgumentNullException(nameof(configureOptions));
             return services.Configure(configureOptions);
         }
 
