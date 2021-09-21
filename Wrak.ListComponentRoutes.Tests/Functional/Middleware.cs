@@ -6,10 +6,26 @@ namespace Wrak.ListComponentRoutes.Tests.Functional
 {
     public class Middleware
     {
+        [Fact]
+        public async Task Returns_Default_Content()
+        {
+            // Arrange
+            var factory = new CustomWebApplicationFactory<Startup>();
+            var client = factory.CreateClient();
+
+            // Act
+            var response = await client.GetAsync("/counter");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+            string stringResponse = await response.Content.ReadAsStringAsync();
+            Assert.Contains("<h1>Counter</h1>", stringResponse);
+        }
+
         [Theory]
         [InlineData("/routes")]
         [InlineData("/custom-route")]
-        public async Task Returns_Correct_Content(string path)
+        public async Task Returns_Middleware_Content(string path)
         {
             // Arrange
             var factory = new CustomWebApplicationFactory<Startup> { Path = path };
