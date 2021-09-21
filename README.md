@@ -20,7 +20,7 @@ PM> Install-Package Wrak.ListComponentRoutes
 using Wrak.ListComponentRoutes;
 ```
 
-3. Add the following at **the bottom of** Startup's `ConfigureServices` method:
+3. Add the following at the **bottom** of Startup's `ConfigureServices` method:
 
 ```
 services.AddListComponentRoutes(options =>
