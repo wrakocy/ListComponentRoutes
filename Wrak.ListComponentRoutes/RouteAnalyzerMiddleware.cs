@@ -31,9 +31,9 @@ namespace Wrak.ListComponentRoutes
                 foreach (var rd in routeDescriptors)
                 {
                     sb.Append("<tr align='left'>");
-                    sb.Append($"<td style='width:40%;'>{rd.Route}</td>");
+                    sb.Append($"<td style='width:45%;'>{rd.Route}</td>");
                     sb.Append($"<td style='width:20%;'>{rd.ComponentName}</td>");
-                    sb.Append($"<td style='width:40%;'>{rd.ComponentNamespace}</td>");                              
+                    sb.Append($"<td style='width:35%;'>{rd.ComponentNamespace}</td>");                              
                     sb.Append("</tr>");
                 }
 
