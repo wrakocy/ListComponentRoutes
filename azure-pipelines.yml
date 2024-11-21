@@ -20,11 +20,11 @@ steps:
     version: '9.0.x'
 
 - task: DotNetCoreCLI@2
-    displayName: 'Build Solution'
-    inputs:
-      command: 'build'
-      projects: 'Wrak.ListComponentRoutes.sln'
-      arguments: '--configuration $(buildConfiguration)'
+  displayName: 'Build Solution'
+  inputs:
+    command: 'build'
+    projects: 'Wrak.ListComponentRoutes.sln'
+    arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: Run Tests
