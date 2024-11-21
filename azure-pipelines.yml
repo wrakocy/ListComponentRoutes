@@ -13,12 +13,22 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Build $(buildConfiguration)'
+- task: UseDotNet@2
+  displayName: 'Use .NET SDK'
+  inputs:
+    packageType: sdk
+    version: '9.0.x'
+
+- task: DotNetCoreCLI@2
+    displayName: 'Build Solution'
+    inputs:
+    command: 'build'
+    projects: 'Wrak.ListComponentRoutes.sln'
+    arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: Run Tests
   inputs:
     command: test
     projects: '**/Wrak.ListComponentRoutes.Tests.csproj'
-    arguments: '--configuration $(BuildConfiguration) --no-build --no-restore'
+    arguments: '--configuration $(buildConfiguration) --no-build --no-restore'
