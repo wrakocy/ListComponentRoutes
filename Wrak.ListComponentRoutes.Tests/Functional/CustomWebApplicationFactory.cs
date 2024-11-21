@@ -17,7 +17,7 @@ namespace Wrak.ListComponentRoutes.Tests.Functional
                 {
                     config.Assemblies = new[] { typeof(Startup).Assembly };
 
-                    if(!string.IsNullOrEmpty(Path))
+                    if (!string.IsNullOrEmpty(Path))
                         config.Path = Path;
                 });
             });

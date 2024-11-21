@@ -14,7 +14,7 @@ namespace Wrak.ListComponentRoutes
 
             var components = assemblies
                 .SelectMany(assembly => assembly
-                .ExportedTypes 
+                .ExportedTypes
                 .Where(t => t.IsSubclassOf(typeof(ComponentBase))));
 
             var routes = components
@@ -31,7 +31,7 @@ namespace Wrak.ListComponentRoutes
             var attributes = component.GetCustomAttributes(inherit: true);
             var routeAttribute = attributes.OfType<RouteAttribute>().FirstOrDefault();
 
-            if(!String.IsNullOrEmpty(routeAttribute?.Template))
+            if (!String.IsNullOrEmpty(routeAttribute?.Template))
             {
                 return new RouteDescriptor
                 {
